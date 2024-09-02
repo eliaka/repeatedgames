@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<script src="jatos.js"></script>
+	<script>
+	jatos.onLoad(function() {
+	// Start here with your code that uses jatos.js' variables and functions
+	});</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Playing repeated games experiment">
+    <meta name="author" content="Elif Akata">
+    <meta charset="utf-8">
+    <title>Two games experiment</title>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+    <link href="js/bootstrap.css" rel="stylesheet" type="text/css">
+ </head>
+	 
+ <div class='container' style="width: 95%; height: 95%">
+	<div id="page1" style="display:block;">
+			<h1>Welcome to our online study on repeated games</h1>
+			
+			This study is part of a research project conducted
+			by the <a href="http://cpilab.org/" target="_blank">Human-Centered AI Group</a>
+			at the Helmholtz Institute in Munich, Germany.<br><br>
+			
+			<!-- images of town + Institute here-->
+			<span>
+			  <img src="./figs/munchen.jpg" height="200px">
+			  <img src="./figs/helmholtz-logo.jpg" height="200px">
+			  <img src="./figs/helmholtz-campus.jpg" height="200px">
+			<figcaption style="font-size: 10px;">www.foto-tw.de (CC BY-SA 3.0 DE), <a href="https://commons.wikimedia.org/wiki/File:Stadtbild_M%C3%BCnchen.jpg" target="_blank"> Source </a></figcaption>
+			</span>
+			<br>Your job will be to play two easy and fun games against two <b>random</b> opponents.<br>
+			
+			To be eligible to participate, you <strong> MUST </strong> meet the following criteria:
+			<ol>
+			<li>Be 18 years of age or older.</li>
+			<li>Be a fluent speaker of English.</li>
+			<li>Have not previously participated in this experiment.</li>
+			</ol>
+			<!-- <b style="color:maroon;">Please use a device with a keyboard.
+			Please do not accept this task if you are using a touch screen device, it will not work!</b> -->
+			
+			<h4>How much time will it take and how much can you earn?</h4>
+			The study will take <b>15-20 minutes</b>.<br>
+			You will be paid <b>£3</b> pounds for participation plus a bonus of up to <b>£2</b> pounds depending on your performance.<br>
+			<!-- Hence, the <b>expected payment is something around $6.00 to $7.00</b>. -->
+	  
+			<h4>Confidentiality</h4>
+			Your participation in this study will remain confidential.
+			Your Prolific ID will NOT be shared with anyone outside the research team.
+	  
+			<h4>Participation and withdrawal</h4>
+			Your participation in this study is completely voluntary and you may refuse to participate
+			or you may choose to withdraw at any time.<br>
+			However, you will only be paid for the participation upon completion
+			and if you enter the correct completion code provided at the end of the study.
+	
+			<h4>How to contact the researchers?</h4>
+			If you have questions or concerns about your participation or payment
+			or want to request a summary of research findings,
+			please email the <a href="mailto:elif.akata@helmholtz-munich.de">researcher</a>
+			or the <a href="mailto:eric.schulz@helmholtz-munich.de">principal investigator</a> (Dr. Eric Schulz).
+	  
+			
+			<h4>Data protection</h4>
+			Your data will be anonymized and only used for scientific purposes in the manner summarized in the following text box. Please read it carefully and provide consent below:<br>
+			<br>
+			
+			<textarea rows="10" cols="150" readonly>
+The processing and use of the collected data occurs in a pseudoanonymized form within the scope of the legally prescribed provisions.
+As a general rule, the storage occurs in the form of answered questionnaires, as well as electronic data, for a duration of 10 years or longer, if this is required by the purpose of the study.
+
+By providing of further personal data in pseudoanonymized form, collected personal data may be used for the preparation of anonymized
+scientific research work and may also be published and used in an anonymized form in medical journals and scientific publications, so that a direct assignment to my person cannot be established.
+
+The information obtained during the course of this study may also be sent in an anonymized form to cooperation partners within the scope of
+the European General Data Protection Regulation for scientific purposes and to cooperation partners outside of the European Union, i.e. to countries with a lower data protection level (this also applies to the USA).
+
+The data collected within the scope of the study can also be used and processed in the future inside of the Max Planck Institute.
+
+I was informed about my rights, that at any time:
+
+I can withdraw this declaration of consent.
+
+I can request information about my stored data and request the correction or blocking of data.
+
+By cancellation of my participation in the study,
+I can request that any personal data of mine collected until that point are immediately deleted or anonymized.
+
+I can request that my personal data are handed out to me or to third parties (if technically feasible).
+
+I herewith declare that:
+
+I have been adequately informed about the collection and processing of my personal data and rights.
+
+I consent to the collection and processing of personal data within the scope of the study and its pseudoanonymized disclosure,
+so that only the persons conducting the study can establish a link between the data and my person.
+
+Agreement:
+
+I agree to participate in this experiment.
+
+I consent to the use of my data described in the Data Protection Information Sheet
+and confirm having received a copy of the Data Protection Sheet.
+
+I consent to data transfer from the Helmholtz Munich encrypted database to the project-related collaborators:
+inside of the Helmholtz Munich and affiliated research institutes, or at partnering institutions like the University of Tuebingen.
+			</textarea>      
+			
+			<br>
+			<br>
+			By selecting the consent option below,
+			you acknowledge that you fulfill all of the participation criteria
+			and you agree to your data being used as described.<br>
+			To enhance your experience, your screen will go to full-screen mode.
+			<br>
+			<br>
+	
+			<button type="button" name="button" id="buttonConsentForm" onclick="openFullscreen('page1','page2');">I consent to participate</button><br><br>
+
+    </div>  
+
+		<!--2nd page contains Concent form-->
+	   <!-- <div id="page2" style="display:none">
+	   		<br> 
+		   	<h4><center>Statement of Informed Consent</center></h4>
+		   	<p><center>Please consider this information carefully before deciding whether to participate in this research.</center></p>
+		    <p><b>Purpose of the research:</b> To examine the way people play games against LLMs. </p>
+		    <p><b>What you will do in this research:</b> Stimuli (images) will be presented on the computer and you will be asked to choose between two different actions after which you may receive feedback to earn monetary reward. You may also be asked to fill out short questionnaires. </p>
+		    <p><b>Time required: </b> Participation will take up to 10 minutes to complete.</p>
+		    <p><b>Risks:</b>  Some of the questionnaires contain questions about sensitive topics such as sexual, physical, or emotional abuse, drug use, violent behavior, medical/psychiatric history, etc., and could cause you to feel uncomfortable or upset. If you do not feel comfortable, you can skip questions or stop the questionnaires at any time.</p>
+		    <p><b>Compensation:</b> You will receive $2 in compensation plus up to $1.50 in bonus for your performance on the task.</p>
+		    <p><b>Confidentiality:</b>  Your participation in this study will remain confidential. Your MTurk worker IDs will NOT be shared with anyone outside of the research team. However, work you perform on MTurk can be linked to your pub-lic profile page. Thus, to maximize your privacy, you may wish to restrict what information you choose to share in your public profile. Your de-identified data may be shared with other researchers and used in future projects.</p>
+		   <p><b>Participation and withdrawal: </b>Your participation in this study is completely voluntary and you may refuse to participate or you may choose to withdraw at any time without penalty or loss of benefits to which you are otherwise entitled.</p>	
+		 <p><b>Agreement:  </b></p>
+			<div style="margin-left:30px;margin-right:30px"> <p>The nature and purpose of this research have been sufficiently explained and I agree to participate in this study.  I understand that I am free to withdraw at any time without incurring any penalty.</p>
+			<p>Please consent by clicking the button below to continue. Otherwise, please exit the study at this time. </p>
+			<button type="button" name="button"; onclick="clickStart('page2','page3')"; >Agree</button>
+			</div>
+			<br><br>
+	    </div> -->
+
+		<!-- <div id="page1b" style="display:none">
+			<br>
+			<b> Please enter your Mechanical Turk Worker ID (required for bonus payment):</b><br>
+			<input type="text" id="mturk" maxlength="20" value="WorkerID"><br><br>
+			<button type="button" name="button"; onclick="gettingstarted()"; >Go to next page</button>
+		 </div> -->
+
+	<!--Introduce the games-->
+	<div id="page2" style="display:none">
+		<br>
+		<h2 style="text-align: center;">Welcome!</h2>
+		<p style="font-size:125%; text-align: center;">
+		<img src="figs/robot-human.webp" height="300px"><br>
+		Today, you are going to play two games against an <b>artificial agent</b> or another fellow <b>human</b>.<br>
+		Your opponent will be randomly assigned and change at the start of each game.<br>
+		So in the end, you may play against two artificial agents, two humans or one artificial agent and one human.<br>
+		Your goal is to gain as many points as possible in both games.<br>
+		<br>
+		<button type="button" name="button"; onclick="clickStart('page2','page1')"; > Back </button>			   
+		<button type="button" name="button"; onclick="clickStart('page2','page3')";> Next </button>
+		</p>
+	</div>
+
+	<!--Tasks-->
+	<div id="page3" style="display:none">
+		<br>
+		<h2 style="text-align: center;">What kind of games?</h2>
+		<p style="font-size:125%; text-align: center;">
+		You will play two different 2x2 games.<br> 
+		This means both games are played with 2 players and each player get to choose between 2 available options (F and J).<br>
+		Which option you choose is up to you and each of them may earn you a different number of points depending on the <i>game rules</i> and your <i>opponent's moves</i>.<br><br>
+		<img src="figs/players-options.png" width="800"><br><br>
+		<button type="button" name="button"; onclick="clickStart('page3','page2')"; > Back </button>			   
+		<button type="button" name="button"; onclick="clickStart('page3','page4')"; > Next </button>
+		</p>
+	</div>
+
+	<!--Tasks-->
+	<div id="page4" style="display:none">
+		<br>
+		<h2 style="text-align: center;">Make your move; repeatedly</h2>
+		<p style="font-size:125%; text-align: center;">
+		Each game consists of <b>10 rounds</b> in total. On each round, you will have a chance to choose from the provided <b>two options</b>.<br>
+		You can choose an option by pressing the corresponding letter (F or J) on your keyboard. In each round, you will have <b>20 seconds</b> to choose one of the options. You will be assigned a random choice if you fail to do so in time and will not earn a monetary bonus for that round.<br><br>
+		<img src="figs/press.png" width="500"><br><br>
+		After 10 rounds, the game will reset and the game rules will change for the next game.<br> 
+		You will get feedback on every round about the number of points you have gained by choosing from the selected option.<br>
+		You will be paid a $0.01 bonus for every 10 points you gained during the experiment.<br><br>
+		<button type="button" name="button"; onclick="clickStart('page4','page3')"; > Back </button>			   
+		<button type="button" name="button"; onclick="clickStart('page4','page5')"; > Next </button>
+		</p>
+	</div>
+
+	<!--Tasks-->
+	<div id="page5" style="display:none">
+		<br>
+		<h2 style="text-align: center;">How to get points?</h2>
+		<p style="font-size:125%; text-align: center;">
+		The respective points each player receives for choosing each option can be expressed visually as follows:<br>
+		<br>
+		<img src="figs/game-rules.png" width="600"><br><br>
+		For example in <b>GAME 1</b>, if both players choose <b>Option J</b>:<br>
+		<FONT COLOR="#ff0000">Player 1</FONT> receives 10 points.<br>
+		<FONT COLOR="#0000FF">Player 2</FONT> receives 7 points.<br>
+		This can be seen in the top left cell of the left square matrix.<br><br>
+		<button type="button" name="button"; onclick="clickStart('page5','page4')"; > Back </button>			   
+		<button type="button" name="button"; onclick="clickStart('page5','page6')"; > Next </button>
+		</p>
+	</div>
+
+	<!--Tasks-->
+	<div id="page6" style="display:none">
+		<br>
+		<h2 style="text-align: center;">What will I see during the gameplays?</h2>
+		<p style="font-size:125%; text-align: center;">
+		Here is a screenshot from one of the gameplays:<br>
+		<br>
+		<img src="figs/screenshot-new.png" width="700"><br><br>
+		In <b>1</b>, you will see the rules of the game you are currently playing and which player you are.<br><br>
+		In <b>2</b>, you will see the history of the game; including which options you and the other player chose in the previous rounds and how many points you both received.<br><br>
+		In <b>3</b>, you will see the current round info; including the number of rounds left in the current game, the two options you can choose and the time you have left to make your choice. This part will also update to show the option you and the other player chose and the points you both received in the current round once you both make your choices.<br><br>
+		<!-- You can click <b>Show guidelines/Hide guidelines</b> on the top left to see a short overview of the instructions you have seen so far.<br><br> -->
+		<button type="button" name="button"; onclick="clickStart('page6','page5')"; > Back </button>			   
+		<button type="button" name="button"; onclick="clickStart('page6','page7')"; > Check comprehension </button>
+		</p>
+	</div>
+
+	<!--Comprehension check-->
+	<div id="page7" style="display:none">
+		<fieldset>
+			<legend>Please answer a few questions about this study before proceeding</legend>
+			<p style="font-size:100%;color:maroon;"> You will only be directed to the next page if you manage to answer all of the questions correctly.</p>
+			<fieldset> 
+				 <!-- </fieldset> style="float:left;width:400px;margin:5px"> -->
+				<b>What is your goal in this study? </b><br>
+				<label for="q1l1" style="font-weight: normal;"><input type="radio" name="q1" id="l1"><span id="q1l1"> Find the best option. </span></label><br>
+				<label for="q1l2" style="font-weight: normal;"><input type="radio" name="q1" id="icheck1"><span id="q1icheck1"> Gain as many points as possible in each game. </span></label><br>
+				<label for="q1l3" style="font-weight: normal;"><input type="radio" name="q1" id="l2"><span id="q1l2"> Pick an arbitary option in every round. </span></label><br>
+				<!-- <label for="q1l4" style="font-weight: normal;"><input type="radio" name="q1" > I do not know. </label> -->
+				<br>
+			</fieldset>
+			<fieldset> 
+				 <!-- style="float:left;width:400px;margin:5px"> -->
+				<b>How many games will you play and how many rounds will there be in each game? </b><br>
+				<label for="q2l1" style="font-weight: normal;"><input type="radio" name="q2" id="l1"/><span id="q2l1"> 2 games and number of rounds may change from game to game. </span></label><br>
+				<label for="q2l2" style="font-weight: normal;"><input type="radio" name="q2" id="l2"/><span id="q2l2"> 5 games and 10 rounds in each game. </span></label><br>
+				<label for="q2l3" style="font-weight: normal;"><input type="radio" name="q2" id="icheck2"> <span id="q2icheck2"> 2 games and 10 rounds in each game. </span></label><br>
+				<!-- <label for="q2l4" style="font-weight: normal;"><input type="radio" name="q2"> I do not know. </label>-->
+				<br>
+			</fieldset>
+			<fieldset>
+				<!-- style="float:left;width:400px;margin:5px"> -->
+				<b>What happens after a game is finished?</b> <br>
+				<label for="q3l1" style="font-weight: normal;"><input type="radio" name="q3" id="l1"><span id="q3l1"> 
+					Game resets and your opponent and the game rules stay the same. </span></label><br>
+				<label for="q3l2" style="font-weight: normal;"><input type="radio" name="q3" id="icheck3"><span id="q3icheck3"> 
+					Game resets and your opponent and the game rules change. </span></label><br>
+				<label for="q3l3" style="font-weight: normal;"><input type="radio" name="q3" id="l3"><span id="q3l3"> 
+					Game resets and the game rules change but your opponent stays the same. </span></label><br>
+				<br>
+			</fieldset>
+			<fieldset>
+			<!-- style="float:left;width:400px;margin:5px" -->
+				<b> Who will be your opponent in each game? </b><br>
+				<label for="q4l2" style="font-weight: normal;"><input type="radio" name="q4" id="icheck4"><span id="q4icheck4"> 
+					Either a human or an artificial agent. </span></label><br>
+				<label for="q4l1" style="font-weight: normal;"><input type="radio" name="q4" id='l2'><span id="q4l2"> 
+					Definitely a human. </span></label><br>
+				<label for="q4l3" style="font-weight: normal;"><input type="radio" name="q4" id='l3'><span id="q4l3"> 
+					Definitely an artificial agent. </span></label><br>
+				<!-- <label for="q4l4" style="font-weight: normal;"><input type="radio" name="q4"> I do not know. </label><br> -->
+			<br>
+			</fieldset>
+		</fieldset>
+		<br>
+		<button type="button" name="button"; onclick="clickStart('page7','page5')"; > Back </button>
+		<button type="button" name="button"; onclick="instructioncheck()";> <span id="check"> Check Answers </span> </button>  
+	</div>
+
+	<div id="page7a" style="display:none">
+		<br>		
+		<h4 style="text-align: center;">Great, you have answered all of the questions correctly!</h4>
+		<h3 style="text-align: center;">Click below when you are ready to start a new game.</h3>
+		<p style="font-size:125%; text-align: center;">
+		<button type="button" name="button"; onclick="wait()";> <span id="wait"> Start </span> </button>  
+		</p>
+	</div>
+
+	<div id="page7a1" style="display:none">
+		<br>
+		<h3 style="text-align: left;">First game is over!</h3>
+		<h1> <font size="4">Please first answer the question below about the game you just played.</font> </h1>
+			<fieldset>
+				<div style="float:left;width:400px;margin:5px">
+					Who do you think was you opponent in the first game?<br>
+					<input id="opponent1" type="radio" name="opponent1" onclick="setopponent1(0)" > A human <br>
+					<input id="opponent1" type="radio" name="opponent1" onclick="setopponent1(1)" > An artificial agent<br>
+				</div>
+			</fieldset>
+		<br>
+		<br>
+		<h4 style="text-align: left;">Click below when you are ready to start a new game.</h4>
+		<p style="font-size:125%; text-align: left;">
+		<button type="button" name="button"; onclick="wait()";> <span id="wait"> Start </span> </button>  
+		</p>
+	</div>
+
+	<div id="page7b" style="display:none">
+		<br>
+		<h2 style="text-align: center;">You are now being paired with a new player.</h2>
+		<p style="font-size:125%; text-align: center;">
+		<img src="figs/loading.gif" width="200"><br>
+		<h5 style="text-align: center;">Please wait...</h5>
+		<p style="font-size:125%; text-align: center;">
+			<div style="height: 3px; background-color: #ccc; margin: 20px 0;"></div> <!-- Custom styled divider -->
+			<h4 style="text-align: center;">Once the next game starts, you will have <span style="color: red;">20 seconds</span> to make your first choice.</h4>
+			<h4 style="text-align: center;">While waiting, you can review the rules of the both games below.</h4><br>
+			<!-- <h4 style="text-align: center;">Next game you will play is:</h4> -->
+			<img id="dynamicImage" src="figs/game-rules-short.png" width="600" style="display: block; margin-left: auto; margin-right: auto;"><br>
+		</p>
+	</div>
+
+    <!--8th page contains instructions and task-->
+    <div id="page8" style="display:none">
+      <h1><Please choose an option to gain points.</font></h1>
+      <!-- <div id="explainshow" style="display:block">
+        <p><b>Summarized Instructions:</b></p>
+        <p><b>I.</b> Below, there are 2 different options marked by different letters. You can choose one by pressing the letter of a particular option on your keyboard. </p>
+        <p><b>II.</b> Options can be repeatedly chosen, although there may be variations in the points earned depending on what the other player chooses.</p>
+        <p><b>III.</b> Your task is to earn as many points as possible by selecting the best options.</p>
+        <p><b>IV.</b> On the bottom, you can see tha current game's rules, and the history of the previous rounds.</p>
+		<p><b>V.</b> You will play Game 1 and Game 2. The order of games will be chosen randomly, you may first play either game.</p>
+        <button type="button" name="button" onclick="clickStart('explainshow','explainhide')">Hide guidelines</button>
+      </div>
+      <div id="explainhide" style="display:none">
+        <button type="button" name="button" onclick="clickStart('explainhide','explainshow')">Show guidelines</button>
+      </div> -->
+	  <center>
+		<div style="display: flex; justify-content: space-between; align-items: start; width: 100%;">
+            <div id="currentGameRules" style="width: 49%; margin-top: 0px;"></div>
+			<!-- <div style="width: 3px; background-color: #ccc; height: auto; align-self: stretch;"></div> -->
+            <div style="width: 39%;">
+                <h3 style="margin-top: 15px;">Previous Rounds</h3>
+                <table id="currentGameHistoryTable" border="1" style="margin-top: 15px;">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="2">Other player</th>
+                            <th colspan="2">You</th>
+                        </tr>
+                        <tr>
+                            <th>Round</th>
+                            <th>Move</th>
+                            <th>Points</th>
+                            <th>Move</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="currentGameHistory"></tbody>
+                </table>
+            </div>
+        </div><br>
+		<div style="height: 3px; background-color: #ccc; margin: 10px 0;"></div> <!-- Custom styled divider -->
+		<b><h3><div id="remain">Rounds left: 9</div></h3></b>
+		<div id='arm1' style="display: inline"></div>
+        <div id='arm2' style="display: inline"></div><br>
+        <div id="next" style="display:block">
+            <b><h3><div id="outcome">Please choose an option!</div></h3></b>
+            <b><h3><div id="countdown" style="color: red;">20 seconds remaining...</div></h3></b>
+        </div>
+    </center>
+
+    </div>
+
+	  <!--9th page contains demographics-->
+		<div id="page9" style="display:none">
+			<br>
+			<h3 style="text-align: left;">Second game is over! The study will soon finish.</h3>
+			<h1> <font size="4">Please first answer the question below about the last game you played.</font></h1>
+			<fieldset>
+				<div style="float:left;width:400px;margin:5px">
+					Who do you think was you opponent in the last game?<br>
+					<input id="opponent2" type="radio" name="opponent2" onclick="setopponent2(0)" > A human <br>
+					<input id="opponent2" type="radio" name="opponent2" onclick="setopponent2(1)" > An artificial agent <br>
+				</div>
+			</fieldset>
+			<br>
+			<p style="font-size:125%; text-align: left;">
+				<button type="button" name="button"; onclick="clickStart('page9','page9a')";> Next </button>  
+			</p>
+			
+		</div>
+
+			  <!--9th page contains demographics-->
+			  <div id="page9a" style="display:none">
+				<br>
+				<h1> <font size="4">Please also tell us something about yourself.</font> </h1>
+				<fieldset>
+					<div style="float:left;width:300px;margin:5px">
+						How old are you?<br>
+						<input id="age" type="radio" name="age" onclick="setage(20)" > 18-25 <br>
+						<input id="age" type="radio" name="age" onclick="setage(30)" > 26-35 <br>
+						<input id="age" type="radio" name="age" onclick="setage(40)" > 36-50 <br>
+						<input id="age" type="radio" name="age" onclick="setage(50)" > above 50 <br>
+					</div>
+					<div style="float:left;width:300px;margin:5px">
+						What's your gender?<br>
+						<input id="gender" type="radio" name="gender" onclick="setgender(0)" > Female <br>
+						<input id="gender" type="radio" name="gender" onclick="setgender(1)" > Male <br>
+					</div>
+					<div style="float:left;width:300px;margin:5px">Handedness?<br>
+						<input type="radio" name="handed" onclick="sethanded(0)" > Right <br>
+						<input type="radio" name="handed" onclick="sethanded(1)" > Left <br>
+					</div>
+				</fieldset>
+				<br>
+				<p style="font-size:125%; text-align: left;">
+					<button type="button" name="button"; onclick="mysubmit()";> Next </button>  
+				</p>
+			</div>
+
+			<div id="page9b" style="display:none">
+				<br>
+				<h2 style="text-align: center;">Final words</h2>
+				<p style="font-size:125%; text-align: center;">
+				<img src="figs/robots.webp" height="300px"><br>
+				This was a study to see how to make Large Language Models (LLMs) more humanlike.<br>
+				So in the end, you played both games against different versions of an <b>artificial agent</b>.<br>
+				Thank you very much for participating in our study!<br>
+				<br>
+				<button type="button" name="button"; onclick="clickStart('page9b','page10')";> Next </button>
+				</p>
+			</div>
+
+		<!--10th page contains results and code word-->
+		<div id="page10" style="display:none">
+		   <h1><font size="4">Your performance and reward</font></h1>
+		   <div id="result"></div><br>
+		   <div id="money"></div><br>
+		   <p>Your Completion Code is:<br> <span id="completioncode" style="font-weight: bold;">C1093JNR</span></p><br>
+		   <p>In case you have any questions, please contact us via our Prolific account or write an email to <br><b>elif.akata@helmholtz-munich.de</b></p>
+		   <p>Clicking below will redirect you back to Prolific.</p>
+		   <br>
+		   <button type="button" name="button"; onclick="redirect_to_prolific()";> Finish study </button>
+		</div>
+	</div>
+    <script src="js/script.js" charset="utf-8"></script>
+    </body>
+</html>

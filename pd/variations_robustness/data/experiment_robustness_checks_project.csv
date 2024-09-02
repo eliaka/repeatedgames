@@ -1,0 +1,91 @@
+round,option1,option2,outcomes,player1,player2,answer1,answer2,points1,points2,total1,total2
+1,F,J,credits,GPT-4,Defect_once,J,F,0,10,0,10
+2,F,J,credits,GPT-4,Defect_once,F,J,10,0,10,10
+3,F,J,credits,GPT-4,Defect_once,F,J,10,0,20,10
+4,J,F,credits,GPT-4,Defect_once,F,J,10,0,30,10
+5,F,J,credits,GPT-4,Defect_once,F,J,10,0,40,10
+6,F,J,credits,GPT-4,Defect_once,F,J,10,0,50,10
+7,F,J,credits,GPT-4,Defect_once,F,J,10,0,60,10
+8,F,J,credits,GPT-4,Defect_once,F,J,10,0,70,10
+9,J,F,credits,GPT-4,Defect_once,F,J,10,0,80,10
+10,J,F,credits,GPT-4,Defect_once,F,J,10,0,90,10
+1,J,F,reputation points,GPT-4,Defect_once,J,F,0,10,0,10
+2,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,10,10
+3,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,20,10
+4,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,30,10
+5,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,40,10
+6,J,F,reputation points,GPT-4,Defect_once,F,J,10,0,50,10
+7,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,60,10
+8,J,F,reputation points,GPT-4,Defect_once,F,J,10,0,70,10
+9,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,80,10
+10,F,J,reputation points,GPT-4,Defect_once,F,J,10,0,90,10
+1,J,F,bonus rewards,GPT-4,Defect_once,J,F,0,10,0,10
+2,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,10,10
+3,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,20,10
+4,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,30,10
+5,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,40,10
+6,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,50,10
+7,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,60,10
+8,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,70,10
+9,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,80,10
+10,J,F,bonus rewards,GPT-4,Defect_once,F,J,10,0,90,10
+1,X,Q,credits,GPT-4,Defect_once,Q,X,0,10,0,10
+2,Q,X,credits,GPT-4,Defect_once,X,Q,10,0,10,10
+3,Q,X,credits,GPT-4,Defect_once,X,Q,10,0,20,10
+4,X,Q,credits,GPT-4,Defect_once,X,Q,10,0,30,10
+5,X,Q,credits,GPT-4,Defect_once,X,Q,10,0,40,10
+6,X,Q,credits,GPT-4,Defect_once,X,Q,10,0,50,10
+7,X,Q,credits,GPT-4,Defect_once,X,Q,10,0,60,10
+8,Q,X,credits,GPT-4,Defect_once,X,Q,10,0,70,10
+9,X,Q,credits,GPT-4,Defect_once,X,Q,10,0,80,10
+10,Q,X,credits,GPT-4,Defect_once,X,Q,10,0,90,10
+1,Q,X,reputation points,GPT-4,Defect_once,Q,X,0,10,0,10
+2,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,10,10
+3,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,20,10
+4,Q,X,reputation points,GPT-4,Defect_once,X,Q,10,0,30,10
+5,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,40,10
+6,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,50,10
+7,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,60,10
+8,Q,X,reputation points,GPT-4,Defect_once,X,Q,10,0,70,10
+9,X,Q,reputation points,GPT-4,Defect_once,X,Q,10,0,80,10
+10,Q,X,reputation points,GPT-4,Defect_once,X,Q,10,0,90,10
+1,Q,X,bonus rewards,GPT-4,Defect_once,Q,X,0,10,0,10
+2,Q,X,bonus rewards,GPT-4,Defect_once,X,Q,10,0,10,10
+3,X,Q,bonus rewards,GPT-4,Defect_once,Q,Q,8,8,18,18
+4,X,Q,bonus rewards,GPT-4,Defect_once,X,Q,10,0,28,18
+5,Q,X,bonus rewards,GPT-4,Defect_once,X,Q,10,0,38,18
+6,Q,X,bonus rewards,GPT-4,Defect_once,X,Q,10,0,48,18
+7,Q,X,bonus rewards,GPT-4,Defect_once,X,Q,10,0,58,18
+8,X,Q,bonus rewards,GPT-4,Defect_once,X,Q,10,0,68,18
+9,X,Q,bonus rewards,GPT-4,Defect_once,X,Q,10,0,78,18
+10,X,Q,bonus rewards,GPT-4,Defect_once,X,Q,10,0,88,18
+1,R,H,credits,GPT-4,Defect_once,H,R,0,10,0,10
+2,R,H,credits,GPT-4,Defect_once,R,H,10,0,10,10
+3,R,H,credits,GPT-4,Defect_once,R,H,10,0,20,10
+4,H,R,credits,GPT-4,Defect_once,R,H,10,0,30,10
+5,R,H,credits,GPT-4,Defect_once,R,H,10,0,40,10
+6,R,H,credits,GPT-4,Defect_once,R,H,10,0,50,10
+7,H,R,credits,GPT-4,Defect_once,R,H,10,0,60,10
+8,R,H,credits,GPT-4,Defect_once,R,H,10,0,70,10
+9,R,H,credits,GPT-4,Defect_once,R,H,10,0,80,10
+10,H,R,credits,GPT-4,Defect_once,R,H,10,0,90,10
+1,R,H,reputation points,GPT-4,Defect_once,H,R,0,10,0,10
+2,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,10,10
+3,H,R,reputation points,GPT-4,Defect_once,R,H,10,0,20,10
+4,H,R,reputation points,GPT-4,Defect_once,R,H,10,0,30,10
+5,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,40,10
+6,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,50,10
+7,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,60,10
+8,H,R,reputation points,GPT-4,Defect_once,R,H,10,0,70,10
+9,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,80,10
+10,R,H,reputation points,GPT-4,Defect_once,R,H,10,0,90,10
+1,R,H,bonus rewards,GPT-4,Defect_once,H,R,0,10,0,10
+2,H,R,bonus rewards,GPT-4,Defect_once,R,H,10,0,10,10
+3,H,R,bonus rewards,GPT-4,Defect_once,H,H,8,8,18,18
+4,R,H,bonus rewards,GPT-4,Defect_once,R,H,10,0,28,18
+5,R,H,bonus rewards,GPT-4,Defect_once,R,H,10,0,38,18
+6,R,H,bonus rewards,GPT-4,Defect_once,R,H,10,0,48,18
+7,H,R,bonus rewards,GPT-4,Defect_once,R,H,10,0,58,18
+8,H,R,bonus rewards,GPT-4,Defect_once,R,H,10,0,68,18
+9,H,R,bonus rewards,GPT-4,Defect_once,R,H,10,0,78,18
+10,R,H,bonus rewards,GPT-4,Defect_once,R,H,10,0,88,18

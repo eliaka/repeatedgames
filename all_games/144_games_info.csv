@@ -1,0 +1,145 @@
+game_number;game_row;game_col;game_name;game_family;r1_c1_p1;r1_c1_p2;r1_c2_p1;r1_c2_p2;r2_c1_p1;r2_c1_p2;r2_c2_p1;r2_c2_p2
+1;1;1;Hegemony;Unfair;3;4;2;3;4;2;1;1
+2;1;2;Samaritan Dilemma;Biased;3;4;2;2;4;3;1;1
+3;1;3;Quasi Altruist;Biased;3;4;2;1;4;3;1;2
+4;1;4;Biased Cycle;Cyclic;3;4;2;1;4;2;1;3
+5;1;5;Inferior Cycle;Cyclic;3;4;2;2;4;1;1;3
+6;1;6;Endless;Cyclic;3;4;2;3;4;1;1;2
+7;1;7;Called Bluff;Unfair;3;3;2;4;4;1;1;2
+8;1;8;Bully;Unfair;3;2;2;4;4;1;1;3
+9;1;9;Unfair Type;Unfair;3;1;2;4;4;2;1;3
+10;1;10;Skewed Battle;Biased;3;1;2;4;4;3;1;2
+11;1;11;Asym Battle;Biased;3;2;2;4;4;3;1;1
+12;1;12;Chicken;Unfair;3;3;2;4;4;2;1;1
+13;2;1;Samson;Unfair;2;4;3;3;4;2;1;1
+14;2;2;Generous;Biased;2;4;3;2;4;3;1;1
+15;2;3;Generous;Biased;2;4;3;1;4;3;1;2
+16;2;4;Quasi Cycle;Cyclic;2;4;3;1;4;2;1;3
+17;2;5;Tragic Cycle;Cyclic;3;4;3;2;4;1;1;3
+18;2;6;Inspector;Cyclic;3;4;3;3;4;1;1;2
+19;2;7;Patron;Biased;3;3;3;4;4;1;1;2
+20;2;8;Protector;Biased;3;2;3;4;4;1;1;3
+21;2;9;Protector;Biased;3;1;3;4;4;2;1;3
+22;2;10;Quasi Battle;Biased;3;1;3;4;4;3;1;2
+23;2;11;Battle;Biased;3;2;3;4;4;3;1;1
+24;2;12;Asym Battle;Biased;3;3;3;4;4;2;1;1
+25;3;1;Delilah;Unfair;1;4;3;3;4;2;2;1
+26;3;2;Generous;Biased;1;4;3;2;4;3;2;1
+27;3;3;Generous;Biased;1;4;3;1;4;3;2;2
+28;3;4;Pursuit Cycle;Cyclic;1;4;3;1;4;2;2;3
+29;3;5;Fixed Sum;Cyclic;1;4;3;2;4;1;2;3
+30;3;6;Missile Crisis;Cyclic;1;4;3;3;4;1;2;2
+31;3;7;Patron;Biased;1;3;3;4;4;1;2;2
+32;3;8;Protector;Biased;1;2;3;4;4;1;2;3
+33;3;9;Protector;Biased;1;1;3;4;4;2;2;3
+34;3;10;Hero;Biased;1;1;3;4;4;3;2;2
+35;3;11;Quasi Battle;Biased;1;2;3;4;4;3;2;1
+36;3;12;Skewed Battle;Biased;1;3;3;4;4;2;2;1
+37;4;1;Hostage;Unfair;1;4;2;3;4;2;3;1
+38;4;2;Benevolent;Biased;1;4;2;2;4;3;3;1
+39;4;3;Subsym Benevolent;Biased;1;4;2;1;4;3;3;2
+40;4;4;Second Best;Second Best;1;4;2;1;4;2;3;3
+41;4;5;Second Best;Second Best;1;4;2;2;4;1;3;3
+42;4;6;Big Bully;Tragic;1;4;2;3;4;1;3;2
+43;4;7;Tragedy;Tragic;1;3;2;4;4;1;3;2
+44;4;8;Asym Delight;Second Best;1;2;2;4;4;1;3;3
+45;4;9;Pure Delight;Second Best;1;1;2;4;4;2;3;3
+46;4;10;Protector;Biased;1;1;2;4;4;3;3;2
+47;4;11;Protector;Biased;1;2;2;4;4;3;3;1
+48;4;12;Unfair Type;Unfair;1;3;2;4;4;2;3;1
+49;5;1;Blackmail Type;Unfair;2;4;1;3;4;2;3;1
+50;5;2;Benevolent Type;Biased;2;4;1;2;4;3;3;1
+51;5;3;Benevolent;Biased;2;4;1;1;4;3;3;2
+52;5;4;Second Best;Second Best;2;4;1;1;4;2;3;3
+53;5;5;Second Best;Second Best;2;4;1;2;4;1;3;3
+54;5;6;Hamlet;Tragic;2;4;1;3;4;1;3;2
+55;5;7;Total Conflict;Tragic;2;3;1;4;4;1;3;2
+56;5;8;Deadlock;Second Best;2;2;1;4;4;1;3;3
+57;5;9;Asym Delight;Second Best;2;1;1;4;4;2;3;3
+58;5;10;Protector;Biased;2;1;1;4;4;3;3;3
+59;5;11;Protector;Biased;2;2;1;4;4;3;3;3
+60;5;12;Bully;Unfair;2;3;1;4;4;2;3;2
+61;6;1;Hegm. Type;Unfair;3;4;1;3;4;2;2;1
+62;6;2;Altruist Type;Biased;3;4;1;2;4;3;2;1
+63;6;3;Altruist;Biased;3;4;1;1;4;3;2;2
+64;6;4;Revelation;PD Family;3;4;1;1;4;2;2;3
+65;6;5;Alibi;PD Family;3;4;1;2;4;1;2;3
+66;6;6;Asym Pd;PD Family;3;4;1;3;4;1;2;2
+67;6;7;Prisoners’ Dilemma;PD Family;3;3;1;4;4;1;2;2
+68;6;8;Total Conflict;Tragic;3;2;1;4;4;1;2;3
+69;6;9;Tragedy;Tragic;3;1;1;4;4;2;2;3
+70;6;10;Patron;Biased;3;1;1;4;4;3;2;2
+71;6;11;Patron;Biased;3;2;1;4;4;3;2;1
+72;6;12;Called Bluff;Unfair;3;3;1;4;4;2;2;1
+73;7;1;Low Conflict;Win-win;4;4;1;3;3;2;2;1
+74;7;2;Aligned;Win-win;4;4;1;2;3;3;2;1
+75;7;3;Pure Aligned;Win-win;4;4;1;1;3;3;2;2
+76;7;4;Asym Coordination;Win-win;4;4;1;1;3;2;2;3
+77;7;5;Asym Assurance;Win-win;4;4;1;2;3;1;2;3
+78;7;6;Stag Hunt;Win-win;4;4;1;3;3;1;2;2
+79;7;7;Asym Pd;PD Family;4;3;1;4;3;1;2;2
+80;7;8;Hamlet;Tragic;4;2;1;4;3;1;2;3
+81;7;9;Big Bully;Tragic;4;1;1;4;3;2;2;3
+82;7;10;Missile Crisis;Cyclic;4;1;1;4;3;3;2;2
+83;7;11;Inspector;Cyclic;4;2;1;4;3;3;2;3
+84;7;12;Endless;Cyclic;4;3;1;4;3;2;2;2
+85;8;1;Mutual;Win-win;4;4;1;3;2;2;3;1
+86;8;2;Privilaged;Win-win;4;4;1;2;2;3;3;1
+87;8;3;Privilaged;Win-win;4;4;1;1;2;3;3;2
+88;8;4;Pure Coordination;Win-win;4;4;1;1;2;2;3;3
+89;8;5;Assurance;Win-win;4;4;1;2;2;1;3;3
+90;8;6;Asym Assurance;Win-win;4;4;1;3;2;1;3;2
+91;8;7;Alibi;PD Family;4;3;1;4;2;1;3;2
+92;8;8;Second Best;Second Best;4;2;1;4;2;1;3;3
+93;8;9;Second Best;Second Best;4;1;1;4;2;2;3;3
+94;8;10;Fixed Sum;Cyclic;4;1;1;4;2;3;3;2
+95;8;11;Tragic Cycle;Cyclic;4;2;1;4;2;3;3;3
+96;8;12;Inferior Cycle;Cyclic;4;3;1;4;2;2;3;2
+97;9;1;Mutual;Win-win;4;4;2;3;1;2;3;1
+98;9;2;Privilaged;Win-win;4;4;2;2;1;3;3;1
+99;9;3;Privilaged;Win-win;4;4;2;1;1;3;3;2
+100;9;4;Coordination;Win-win;4;4;2;1;1;2;3;3
+101;9;5;Pure Coordination;Win-win;4;4;2;2;1;1;3;3
+102;9;6;Asym Coordination;Win-win;4;4;2;3;1;1;3;2
+103;9;7;Revelation;PD Family;4;3;2;4;1;1;3;2
+104;9;8;Second Best;Second Best;4;2;2;4;1;1;3;3
+105;9;9;Second Best;Second Best;4;1;2;4;1;2;3;3
+106;9;10;Pursuit Cycle;Cyclic;4;1;2;4;1;3;3;2
+107;9;11;Quasi Cycle;Cyclic;4;2;2;4;1;3;3;1
+108;9;12;Biased Cycle;Cyclic;4;3;2;4;1;2;3;1
+109;10;1;Aligned;Win-win;4;4;3;3;1;2;2;1
+110;10;2;Asym Harmony;Win-win;4;4;3;2;1;3;2;1
+111;10;3;Mixed Harmony;Win-win;4;4;3;1;1;3;2;2
+112;10;4;Privilaged;Win-win;4;4;3;1;1;2;2;3
+113;10;5;Privilaged;Win-win;4;4;3;2;1;1;2;3
+114;10;6;Pure Aligned;Win-win;4;4;3;3;1;1;2;2
+115;10;7;Altruist;Biased;4;3;3;4;1;1;2;2
+116;10;8;Benevolent;Biased;4;2;3;4;1;1;2;3
+117;10;9;Subsym Benevolent;Biased;4;1;3;4;1;2;2;3
+118;10;10;Generous;Biased;4;1;3;4;1;3;2;2
+119;10;11;Generous;Biased;4;2;3;4;1;3;2;1
+120;10;12;Quasi Altruist;Biased;4;3;3;4;1;2;2;1
+121;11;1;Pure Aligned;Win-win;4;4;3;3;2;2;1;1
+122;11;2;Harmony;Win-win;4;4;3;2;2;3;1;1
+123;11;3;Asym Harmony;Win-win;4;4;3;1;2;3;1;2
+124;11;4;Privilaged;Win-win;4;4;3;1;2;2;1;3
+125;11;5;Privilaged;Win-win;4;4;3;2;2;1;1;3
+126;11;6;Aligned;Win-win;4;4;3;3;2;1;1;2
+127;11;7;Altruist Type;Biased;4;3;3;4;2;1;1;2
+128;11;8;Benevolent Type;Biased;4;2;3;4;2;1;1;3
+129;11;9;Benevolent;Biased;4;1;3;4;2;2;1;3
+130;11;10;Generous;Biased;4;1;3;4;2;3;1;2
+131;11;11;Generous;Biased;4;2;3;4;2;3;1;1
+132;11;12;Samaritan Dilemma;Biased;4;3;3;4;2;2;1;1
+133;12;1;No Conflict;Win-win;4;4;2;3;3;2;1;1
+134;12;2;Pure Aligned;Win-win;4;4;2;2;3;3;1;1
+135;12;3;Aligned;Win-win;4;4;2;1;3;3;1;2
+136;12;4;Mutual;Win-win;4;4;2;1;3;2;1;3
+137;12;5;Mutual;Win-win;4;4;2;2;3;1;1;3
+138;12;6;Low Conflict;Win-win;4;4;2;3;3;1;1;2
+139;12;7;Hegm. Type;Unfair;4;3;2;4;3;1;1;2
+140;12;8;Blackmail Type;Unfair;4;2;2;4;3;1;1;3
+141;12;9;Hostage;Unfair;4;1;2;4;3;2;1;3
+142;12;10;Delilah;Unfair;4;1;2;4;3;3;1;2
+143;12;11;Samson;Unfair;4;2;2;4;3;3;1;1
+144;12;12;Hegemony;Unfair;4;3;2;4;3;2;1;1

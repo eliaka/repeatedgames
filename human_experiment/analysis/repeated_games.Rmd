@@ -1,0 +1,341 @@
+---
+title: "Analyzing humans playing repeated games with LLMs"
+author: "Elif Akata and Eric Schulz"
+date: "7/3/2024"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+```
+## Overview and set-up
+
+This is an R Markdown document for our experiment letting humans play against LLMs. It uses the cleaned data collected from Prolific. It explains how to obtain the results reported in our in the paper.
+
+Let's start by reading in the data and loading packages.
+```{r echo = T, message=FALSE}
+
+#required libraries
+library(plyr)
+library(ggplot2)
+library(ggsignif)
+library(stringr)
+library(RColorBrewer)
+library(lsr)
+library(transport)
+library(lmerTest)
+library(BayesFactor)
+
+#read in data
+d<-read.csv('repgames.csv')
+```
+
+We need to create some functions for plotting and summarization.
+```{r echo = T, message=FALSE}
+
+#standard error
+se<-function(x){sd(x)/sqrt(length(x))}
+
+#data summary function
+data_summary <- function(x) {
+  m <- mean(x, na.rm=TRUE)
+  sem <-sd(x, na.rm=TRUE)/sqrt(sum(!is.na(x)))
+  ymin<-m-1.96*sem
+  ymax<-m+1.96*sem
+  return(c(y=m,ymin=ymin,ymax=ymax))
+}
+
+#binomial function
+mybinomfunc<-function(x, mark){
+  b1<-binom.test(sum(x==mark), length(x), p=1/2, conf.level=0.9)
+  dout<-data.frame(state=mark, p=as.numeric(b1$estimate), clow=b1$conf.int[1], cup=b1$conf.int[2])
+  return(dout)
+}
+
+#position dodge
+pd1<-position_dodge(0.1)
+pd2<-position_dodge(0.01)
+
+#my palette
+mypalette<-brewer.pal(3,"Dark2")[1:2]
+```
+
+## Scores in the Battle of the Sexes 
+
+Let's check if the prompting technique changed people's scores in the game.
+
+```{r echo = T, message=FALSE}
+
+#which opponent let to better scores in BoS?
+m1<-lmer(score~opponent+(1|id), data=subset(d, game=='BoS'))
+summary(m1)
+#people scored higher in the prompted version
+
+dt<-ddply(subset(d, game=='BoS'), ~opponent+id, summarize, score=mean(score))
+ttestBF(subset(dt, opponent=='Prompted')$score, 
+        subset(dt, opponent=='Base')$score,
+        nullInterval=c(-Inf,0))
+#substantial effect
+
+#point data frame
+dpoint<-ddply(subset(d, game=='BoS'), ~opponent+id, summarize, score=mean(score))
+
+#summarized points
+dm<-ddply(subset(d, game=='BoS'), ~opponent, summarize, m=mean(score), se=se(score))
+
+#reshape summary data frame
+dsum<-data.frame(m=dm$m, Conditionl=dm$opponent,ymin=dm$m-dm$se, ymax=dm$m+dm$se)
+
+
+
+#let's plot it
+p1<-ggplot(dpoint, aes(x =opponent, y = score, fill=opponent, color=opponent))+
+  #dot plots
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.5, dotsize=0.6, binwidth=0.3, position=pd1, alpha=0.5) +
+  #summary function
+  stat_summary(fun.data=data_summary, color="grey30", size=0.5, alpha=0.75)+
+  #minimal theme
+  theme_minimal()+ 
+  #change text
+  theme(text = element_text(size=16,  family="sans"))+
+  #colors and fill
+  scale_fill_manual(values =mypalette)+
+  scale_color_manual(values = mypalette)+
+  #write Bayes Factor on top
+  geom_signif(comparisons=list(c("Base", "Prompted")), annotations="BF=80.6",
+              y_position = 8.5, tip_length = 0, vjust=-0.1, col="black", size=1.1, textsize=5) +
+  #label axes
+  xlab("Opposing LLM")+ylab("Average score")+
+  #scale of ticks
+  scale_y_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10), limits = c(0,10))+
+  #no legend
+  theme(legend.position="none", strip.background=element_blank(), legend.key=element_rect(color=NA))+
+  #title
+  ggtitle("b: Battle of the Sexes")+
+  #various theme changes including reducing white space and adding axes
+  theme(axis.line.x = element_line(color="grey20", size = 1),
+        axis.line.y = element_line(color="grey20", size = 1))
+
+#Show it!
+print(p1)
+```
+
+## Scores in the Prisoner's Dilemma
+
+Let's check if the prompting technique changed people's scores in the game.
+
+```{r echo = T, message=FALSE}
+#which opponent let to better scores in BoS?
+m1<-lmer(score~opponent+(1|id), data=subset(d, game=='PD'))
+summary(m1)
+#no difference
+
+dt<-ddply(subset(d, game=='PD'), ~opponent+id, summarize, score=mean(score))
+ttestBF(subset(dt, opponent=='Prompted')$score, 
+        subset(dt, opponent=='Base')$score,
+        nullInterval=c(-Inf,0))
+#evidence for the null
+
+#point data frame
+dpoint<-ddply(subset(d, game=='PD'), ~opponent+id, summarize, score=mean(score))
+
+#summarized points
+dm<-ddply(subset(d, game=='PD'), ~opponent, summarize, m=mean(score), se=se(score))
+
+#reshape summary data frame
+dsum<-data.frame(m=dm$m, Conditionl=dm$opponent,ymin=dm$m-dm$se, ymax=dm$m+dm$se)
+
+
+
+#let's plot it
+p2<-ggplot(dpoint, aes(x =opponent, y = score, fill=opponent, color=opponent))+
+  #dot plots
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.1, dotsize=0.6, binwidth=0.3, position=pd1, alpha=0.5) +
+  #summary function
+  stat_summary(fun.data=data_summary, color="grey30", size=0.5, alpha=0.75)+
+  #minimal theme
+  theme_minimal()+ 
+  #change text
+  theme(text = element_text(size=16,  family="sans"))+
+  #colors and fill
+  scale_fill_manual(values =mypalette)+
+  scale_color_manual(values = mypalette)+
+  #write Bayes Factor on top
+  geom_signif(comparisons=list(c("Base", "Prompted")), annotations="BF=0.2",
+              y_position = 8.5, tip_length = 0, vjust=-0.1, col="black", size=1.1, textsize=5) +
+  #label axes
+  xlab("Opposing LLM")+ylab("Average score")+
+  #scale of ticks
+  scale_y_continuous(breaks=c(0,1,2,3,4,5,6,7,8,9,10), limits = c(0,10))+
+  #no legend
+  theme(legend.position="none", strip.background=element_blank(), legend.key=element_rect(color=NA))+
+  #title
+  ggtitle("c: Prisoner's Dilemma")+
+  #various theme changes including reducing white space and adding axes
+  theme(axis.line.x = element_line(color="grey20", size = 1),
+        axis.line.y = element_line(color="grey20", size = 1))
+print(p2)
+```
+
+
+## Guessing whether or not the other agent is human
+
+Let's check if prompting changed guesses. 
+
+```{r echo = T, message=FALSE}
+#mark guesses
+d$guessbin<-ifelse(d$guess=='Human', 1, 0)
+#summarize
+dd<-ddply(d, ~id+opponent, summarize, guessbin=mean(guessbin))
+
+#test
+ttestBF(subset(dd, opponent=='Prompted')$guessbin, 
+        subset(dd, opponent=='Base')$guessbin,
+        nullInterval=c(-Inf,0))
+
+dd<-ddply(d, ~id+game+opponent, summarize, guessbin=mean(guessbin))
+dc1<-subset(dd, opponent=="Base")
+dc2<-subset(dd, opponent=="Prompted")
+
+
+#apply binomial function
+dp<-rbind(mybinomfunc(dc1$guessbin, 1), mybinomfunc(dc2$guessbin, 1))
+#labels state
+dp$state<-c("Base", "Prompted")
+
+#plotting
+p3 <- ggplot(dp, aes(y=p, x=as.factor(state), fill=as.factor(state))) +
+  #summarize as a bar
+  stat_summary(fun.y = mean, geom = "bar", position = "dodge", color='black', width=0.6) + 
+  #points
+  geom_point()+
+  #error bars
+  geom_errorbar(aes(ymin=clow, ymax=cup),color='black', width = .33, position=position_dodge((width=0.9))) +
+  #label axes
+  ylab("P(Human)")+ xlab("Opposing LLM")+ 
+  #theme and font change
+  theme_minimal()+ 
+  theme(text = element_text(size=16,  family="sans"))+
+  #change color
+  scale_fill_manual(values = mypalette)+
+  #now legend
+  theme(strip.background=element_blank(), legend.key=element_rect(color=NA), legend.position="none")+
+  guides(color=FALSE, shape=FALSE)+
+  #add Bayes Factor above
+  geom_signif(comparisons=list(c("Base", "Prompted")), annotations="BF=17.6",
+              y_position = 0.65, tip_length = 0, vjust=-0.1, col="black", size=1.1, textsize=5) +
+  #change y limits
+  scale_y_continuous(expand = c(0,0),
+                     limits = c(0,0.75)) +
+  #change title
+  ggtitle("d: Guessing the opponent")+
+  #various theme changes including reducing white space and adding axes
+  theme(axis.line.x = element_line(color="grey20", size = 1),
+        axis.line.y = element_line(color="grey20", size = 1))
+
+print(p3)
+```
+## Behavioral changes in the Battle of the Sexes
+
+Let's check if behavior changed in BoS.
+
+```{r echo = T, message=FALSE}
+#subset
+dbos<-subset(d, game=='BoS')
+#marking successful coordination
+dbos$coordinated<-ifelse(dbos$score==0, 0, 1)
+
+dt<-ddply(dbos, ~opponent+id, summarize, score=mean(coordinated))
+ttestBF(subset(dt, opponent=='Prompted')$score, 
+        subset(dt, opponent=='Base')$score,
+        nullInterval=c(-Inf,0))
+
+
+#point data frame
+dpoint<-ddply(dbos, ~opponent+id, summarize, score=mean(coordinated))
+
+#summarized points
+dm<-ddply(dbos, ~opponent, summarize, m=mean(coordinated), se=se(coordinated))
+
+#reshape summary data frame
+dsum<-data.frame(m=dm$m, Conditionl=dm$opponent,ymin=dm$m-dm$se, ymax=dm$m+dm$se)
+
+#let's plot it
+p5<-ggplot(dpoint, aes(x =opponent, y = score, fill=opponent, color=opponent))+
+  #dot plots
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.2, dotsize=0.185, binwidth=0.1, position=pd1, alpha=0.5) +
+  #summary function
+  stat_summary(fun.data=data_summary, color="grey30", size=0.5, alpha=0.75)+
+  #minimal theme
+  theme_minimal()+ 
+  #change text
+  theme(text = element_text(size=16,  family="sans"))+
+  #colors and fill
+  scale_fill_manual(values =mypalette)+
+  scale_color_manual(values = mypalette)+
+  #write Bayes Factor on top
+  geom_signif(comparisons=list(c("Base", "Prompted")), annotations="BF=13.4",
+              y_position = 1, tip_length = 0, vjust=-0.1, col="black", size=1.1, textsize=5) +
+  #label axes
+  xlab("Opposing LLM")+ylab("P(Success)")+
+  #scale of ticks
+  scale_y_continuous(breaks=c(0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1), limits = c(0,1.1))+
+  #no legend
+  theme(legend.position="none", strip.background=element_blank(), legend.key=element_rect(color=NA))+
+  #title
+  ggtitle("e: Successful coordination")+
+  #various theme changes including reducing white space and adding axes
+  theme(axis.line.x = element_line(color="grey20", size = 1),
+        axis.line.y = element_line(color="grey20", size = 1))
+p5
+```
+
+## Behavioral changes in the Prisoner's Dilemma
+
+Let's check if behavior changed in PD.
+
+```{r echo = T, message=FALSE}
+dpd<-subset(d, game=='PD')
+dpd$cooperated<-ifelse(dpd$score==5, 1, 0)
+dt<-ddply(dpd, ~opponent+id, summarize, score=mean(cooperated))
+m<-glm(cooperated~opponent, data=dpd, family='binomial')
+summary(m)
+
+#point data frame
+dpoint<-ddply(dpd, ~opponent+id, summarize, score=mean(cooperated))
+
+#summarized points
+dm<-ddply(dpd, ~opponent, summarize, m=mean(cooperated), se=se(cooperated))
+
+#reshape summary data frame
+dsum<-data.frame(m=dm$m, Conditionl=dm$opponent,ymin=dm$m-dm$se, ymax=dm$m+dm$se)
+#let's plot it
+p6<-ggplot(dpoint, aes(x =opponent, y = score, fill=opponent, color=opponent))+
+  #dot plots
+  geom_dotplot(binaxis='y', stackdir='center',stackratio=1.1, dotsize=0.175, binwidth=0.1, position=pd1, alpha=0.5) +
+  #summary function
+  stat_summary(fun.data=data_summary, color="grey30", size=0.5, alpha=0.75)+
+  #minimal theme
+  theme_minimal()+ 
+  #change text
+  theme(text = element_text(size=16,  family="sans"))+
+  #colors and fill
+  scale_fill_manual(values =mypalette)+
+  scale_color_manual(values = mypalette)+
+  #write Bayes Factor on top
+  geom_signif(comparisons=list(c("Base", "Prompted")), annotations="BF=6.5",
+              y_position = 0.9, tip_length = 0, vjust=-0.1, col="black", size=1.1, textsize=5) +
+  #label axes
+  xlab("Opposing LLM")+ylab("P(Cooperation)")+
+  #scale of ticks
+  scale_y_continuous(breaks=c(0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1), limits = c(0,1))+
+  #no legend
+  theme(legend.position="none", strip.background=element_blank(), legend.key=element_rect(color=NA))+
+  #title
+  ggtitle("f: Joint cooperation")+
+  #various theme changes including reducing white space and adding axes
+  theme(axis.line.x = element_line(color="grey20", size = 1),
+        axis.line.y = element_line(color="grey20", size = 1))
+
+print(p6)
+```

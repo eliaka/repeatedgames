@@ -1,0 +1,91 @@
+round,option1,option2,outcomes,player1,player2,answer1,answer2,points1,points2,total1,total2
+1,J,F,points,GPT-4,Defect_once,J,J,10,7,10,7
+2,J,F,points,GPT-4,Defect_once,J,F,0,0,10,7
+3,J,F,points,GPT-4,Defect_once,J,J,10,7,20,14
+4,F,J,points,GPT-4,Defect_once,J,F,0,0,20,14
+5,J,F,points,GPT-4,Defect_once,J,J,10,7,30,21
+6,J,F,points,GPT-4,Defect_once,J,F,0,0,30,21
+7,F,J,points,GPT-4,Defect_once,J,J,10,7,40,28
+8,F,J,points,GPT-4,Defect_once,J,F,0,0,40,28
+9,J,F,points,GPT-4,Defect_once,J,J,10,7,50,35
+10,J,F,points,GPT-4,Defect_once,J,F,0,0,50,35
+1,F,J,audience votes,GPT-4,Defect_once,J,J,10,7,10,7
+2,F,J,audience votes,GPT-4,Defect_once,J,F,0,0,10,7
+3,F,J,audience votes,GPT-4,Defect_once,J,J,10,7,20,14
+4,F,J,audience votes,GPT-4,Defect_once,J,F,0,0,20,14
+5,J,F,audience votes,GPT-4,Defect_once,J,J,10,7,30,21
+6,F,J,audience votes,GPT-4,Defect_once,J,F,0,0,30,21
+7,J,F,audience votes,GPT-4,Defect_once,J,J,10,7,40,28
+8,J,F,audience votes,GPT-4,Defect_once,J,F,0,0,40,28
+9,J,F,audience votes,GPT-4,Defect_once,J,J,10,7,50,35
+10,J,F,audience votes,GPT-4,Defect_once,J,F,0,0,50,35
+1,F,J,prize tokens,GPT-4,Defect_once,J,J,10,7,10,7
+2,F,J,prize tokens,GPT-4,Defect_once,J,F,0,0,10,7
+3,J,F,prize tokens,GPT-4,Defect_once,J,J,10,7,20,14
+4,F,J,prize tokens,GPT-4,Defect_once,J,F,0,0,20,14
+5,J,F,prize tokens,GPT-4,Defect_once,J,J,10,7,30,21
+6,F,J,prize tokens,GPT-4,Defect_once,J,F,0,0,30,21
+7,J,F,prize tokens,GPT-4,Defect_once,J,J,10,7,40,28
+8,J,F,prize tokens,GPT-4,Defect_once,J,F,0,0,40,28
+9,J,F,prize tokens,GPT-4,Defect_once,J,J,10,7,50,35
+10,F,J,prize tokens,GPT-4,Defect_once,J,F,0,0,50,35
+1,X,Q,points,GPT-4,Defect_once,Q,Q,10,7,10,7
+2,Q,X,points,GPT-4,Defect_once,Q,X,0,0,10,7
+3,X,Q,points,GPT-4,Defect_once,Q,Q,10,7,20,14
+4,X,Q,points,GPT-4,Defect_once,Q,X,0,0,20,14
+5,Q,X,points,GPT-4,Defect_once,Q,Q,10,7,30,21
+6,X,Q,points,GPT-4,Defect_once,Q,X,0,0,30,21
+7,Q,X,points,GPT-4,Defect_once,Q,Q,10,7,40,28
+8,Q,X,points,GPT-4,Defect_once,Q,X,0,0,40,28
+9,X,Q,points,GPT-4,Defect_once,Q,Q,10,7,50,35
+10,Q,X,points,GPT-4,Defect_once,Q,X,0,0,50,35
+1,X,Q,audience votes,GPT-4,Defect_once,Q,Q,10,7,10,7
+2,X,Q,audience votes,GPT-4,Defect_once,Q,X,0,0,10,7
+3,Q,X,audience votes,GPT-4,Defect_once,Q,Q,10,7,20,14
+4,X,Q,audience votes,GPT-4,Defect_once,Q,X,0,0,20,14
+5,Q,X,audience votes,GPT-4,Defect_once,Q,Q,10,7,30,21
+6,Q,X,audience votes,GPT-4,Defect_once,Q,X,0,0,30,21
+7,X,Q,audience votes,GPT-4,Defect_once,Q,Q,10,7,40,28
+8,X,Q,audience votes,GPT-4,Defect_once,Q,X,0,0,40,28
+9,X,Q,audience votes,GPT-4,Defect_once,Q,Q,10,7,50,35
+10,Q,X,audience votes,GPT-4,Defect_once,Q,X,0,0,50,35
+1,X,Q,prize tokens,GPT-4,Defect_once,Q,Q,10,7,10,7
+2,Q,X,prize tokens,GPT-4,Defect_once,Q,X,0,0,10,7
+3,Q,X,prize tokens,GPT-4,Defect_once,Q,Q,10,7,20,14
+4,Q,X,prize tokens,GPT-4,Defect_once,Q,X,0,0,20,14
+5,X,Q,prize tokens,GPT-4,Defect_once,Q,Q,10,7,30,21
+6,X,Q,prize tokens,GPT-4,Defect_once,Q,X,0,0,30,21
+7,Q,X,prize tokens,GPT-4,Defect_once,Q,Q,10,7,40,28
+8,Q,X,prize tokens,GPT-4,Defect_once,Q,X,0,0,40,28
+9,Q,X,prize tokens,GPT-4,Defect_once,Q,Q,10,7,50,35
+10,X,Q,prize tokens,GPT-4,Defect_once,Q,X,0,0,50,35
+1,H,R,points,GPT-4,Defect_once,R,R,10,7,10,7
+2,R,H,points,GPT-4,Defect_once,R,H,0,0,10,7
+3,H,R,points,GPT-4,Defect_once,R,R,10,7,20,14
+4,H,R,points,GPT-4,Defect_once,R,H,0,0,20,14
+5,R,H,points,GPT-4,Defect_once,R,R,10,7,30,21
+6,R,H,points,GPT-4,Defect_once,R,H,0,0,30,21
+7,R,H,points,GPT-4,Defect_once,R,R,10,7,40,28
+8,H,R,points,GPT-4,Defect_once,R,H,0,0,40,28
+9,H,R,points,GPT-4,Defect_once,R,R,10,7,50,35
+10,R,H,points,GPT-4,Defect_once,R,H,0,0,50,35
+1,H,R,audience votes,GPT-4,Defect_once,R,R,10,7,10,7
+2,R,H,audience votes,GPT-4,Defect_once,R,H,0,0,10,7
+3,H,R,audience votes,GPT-4,Defect_once,R,R,10,7,20,14
+4,R,H,audience votes,GPT-4,Defect_once,R,H,0,0,20,14
+5,R,H,audience votes,GPT-4,Defect_once,R,R,10,7,30,21
+6,R,H,audience votes,GPT-4,Defect_once,R,H,0,0,30,21
+7,H,R,audience votes,GPT-4,Defect_once,R,R,10,7,40,28
+8,R,H,audience votes,GPT-4,Defect_once,R,H,0,0,40,28
+9,H,R,audience votes,GPT-4,Defect_once,R,R,10,7,50,35
+10,R,H,audience votes,GPT-4,Defect_once,R,H,0,0,50,35
+1,H,R,prize tokens,GPT-4,Defect_once,R,R,10,7,10,7
+2,H,R,prize tokens,GPT-4,Defect_once,R,H,0,0,10,7
+3,R,H,prize tokens,GPT-4,Defect_once,R,R,10,7,20,14
+4,H,R,prize tokens,GPT-4,Defect_once,R,H,0,0,20,14
+5,R,H,prize tokens,GPT-4,Defect_once,R,R,10,7,30,21
+6,R,H,prize tokens,GPT-4,Defect_once,R,H,0,0,30,21
+7,R,H,prize tokens,GPT-4,Defect_once,R,R,10,7,40,28
+8,R,H,prize tokens,GPT-4,Defect_once,R,H,0,0,40,28
+9,H,R,prize tokens,GPT-4,Defect_once,R,R,10,7,50,35
+10,R,H,prize tokens,GPT-4,Defect_once,R,H,0,0,50,35
