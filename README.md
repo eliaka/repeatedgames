@@ -21,7 +21,7 @@ __Authors__: Elif Akata, Lion Schulz, Julian Coda-Forno, Seong Joon Oh, Matthias
 
 ## System Requirements
 
-For the largest model 'Llama-2-70b-chat', a minimum of 140GB VRAM (e.g 2xA100 80GB) is necessary. For the API calls, the system requirements will be minimal: 
+For the largest model `Llama-2-70b-chat`, a minimum of 140GB VRAM (e.g 2xA100 80GB) is necessary. For the API calls, the system requirements will be minimal: 
 
 - Operating System: Windows, macOS, or Linux
 - CPU: Any modern processor (Intel i3 or higher, AMD Ryzen series)
