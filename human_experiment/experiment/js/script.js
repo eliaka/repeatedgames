@@ -120,25 +120,16 @@ function toFixed(value, precision)
 }
 
 function redirect_to_prolific() {
-  // window.location.href = "https://app.prolific.com/submissions/complete?cc=C1093JNR";
-  jatos.endStudyAndRedirect("https://app.prolific.co/submissions/complete?cc=C1093JNR")
+  jatos.endStudyAndRedirect("https://app.prolific.co/submissions/complete?cc=CC")
 }
 
 ////////////////////////////////////////////////////////////////////////
 //Instruction Check
 ////////////////////////////////////////////////////////////////////////
+
 var turkid=0;
 function getprolificparameters()
 {
-  // turkid=document.getElementById("mturk").value;
-  // if (turkid=="WorkerID")
-  // 	{
-  // 		alert("Please provide your Mechanical Turk Worker ID. We will need your ID for paying the bonus.");
-  // 	}else
-  // 	{
-  // 		clickStart("page1b", "page2");
-  // 	}
-  // get subject ID
   if (window.location.search.indexOf('PROLIFIC_PID') > -1) {
     subjectID = getQueryVariable('PROLIFIC_PID');
   }
@@ -154,47 +145,6 @@ function getprolificparameters()
     studyID = 'data'
   }
 }
-
-// function instructioncheck()
-// {
-//     //check if correct answers are provided
-//     if (document.getElementById('icheck1').checked) {var ch1=1}
-//     if (document.getElementById('icheck2').checked) {var  ch2 = 1}
-//     if (document.getElementById('icheck3').checked) {var  ch3 = 1}
-//     //are all of the correct
-//     var checksum=ch1+ch2+ch3;
-//     if (checksum===3){
-//       //if correct, continue
-//       begintrial();
-//       clickStart('page7', 'page8');
-//       //alert
-//       alert('Great, you have answered all of the questions correctly. The study will now start.');
-//     } else{
-//     	instcounter++;
-//         //if one or more answers are wrong, raise alert box
-//         alert('You have answered some of the questions wrong. Please try again.');
-//         //go back to instructions
-//         clickStart('page7', 'page4');
-//     }
-// }
-
-// extract URL parameters (FROM: https://s3.amazonaws.com/mturk-public/externalHIT_v1.js)
-// function turkGetParam(name) {
-//   var regexS = "[\?&]" + name + "=([^&#]*)";
-//   var regex = new RegExp(regexS);
-//   if (typeof fullurl == "undefined"){ 
-//     console.log("fullurl, who?")
-//     return Math.floor(Math.random() * 10000);     
-//   } else {
-//      var tmpURL = fullurl;
-//      var results = regex.exec(tmpURL);
-//      if (results == null) {
-//          return Math.floor(Math.random() * 10000);
-//      } else {
-//          return results[1];
-//   }
-//  }
-// }
 
 function getQueryVariable(variable)
 {
@@ -282,8 +232,6 @@ function wait() {
   document.getElementById('page7b').style.display = 'block';
   // Choose a random number between 30 and 40
 	let x = Math.floor(Math.random() * 11) + 30;
-  // Choose a random number between 5 and 10
-  // let x = Math.floor(Math.random() * 6) + 15;
 
   // Wait for x seconds before proceeding to the next page
   setTimeout(function() {
@@ -338,6 +286,7 @@ function updateImage(gameNumber) {
 ////////////////////////////////////////////////////////////////////////
 //Experiment
 ////////////////////////////////////////////////////////////////////////
+
 var blockStatusDiv = document.getElementById("currentGameRules");
 var blockStatusHist = document.getElementById("currentGameHistory");
 
@@ -501,7 +450,7 @@ function startCountdown() {
     clearInterval(countdown);
   }
 
-  timeLeft = 20;  // Reset the countdown timer ////////////////// CHANGE TO 20
+  timeLeft = 20;  // Reset the countdown timer
   countdown = setInterval(() => {
     if (timeLeft <= 0) {
       clearInterval(countdown);
@@ -578,12 +527,6 @@ function myfunc(inp) {
   let b2 = letter + 'J' + pspecs + borders[1];
   // Draw the options with their letters; now the chosen one has a thicker frame
   drawletters();
-
-  // Display choices and points for both participant and opponent
-  // let outcomeMessage = `
-  //   You chose ${inp === 0 ? "F" : "J"}, Opponent chose ${opponentChoice}<br>
-  //   You won ${playerPoints} points, Opponent won ${opponentPoints} points
-  // `;
 
   let outcomeMessage;
   if(timeLeft <= 0) {
@@ -714,9 +657,6 @@ function nextblock()
   historyMessage = "";
   // change('currentGameHistory', historyMessage);
   clearHistory();
-  //update overall score
-  // overallscore=overallscore+totalscore;
-  //borders back to normal
   borders=['border="1">','border="1">'];
   //new letters and boxes
   b1=letter+'F'+pspecs+borders[0];
@@ -735,9 +675,6 @@ function nextblock()
   totalscore=0;
   //insert total score
   var inserts='Total Score: '+toFixed(totalscore,0);
-  //put on screen
-  // change('score', inserts);
-  //number of trials left
   var insertt='Number of trials left: '+(ntrials-trial);
   //on screen
   change('remain', insertt);
@@ -748,6 +685,7 @@ function nextblock()
 ////////////////////////////////////////////////////////////////////////
 //Demographics & Finish
 ////////////////////////////////////////////////////////////////////////
+
 //sets the selected gender
 function setgender(x)
 {
@@ -800,8 +738,6 @@ function saveData(filedata){
 
 function mysubmit()
 {
-  // var prolific_id = jatos.urlQueryParameters.prolific_pid;
-  // vars.prolific_id = prolific_id;
   var PROLIFIC_PID = jatos.urlQueryParameters.PROLIFIC_PID;
   //change page
   clickStart('page9a','page9b');
@@ -839,11 +775,8 @@ function mysubmit()
   };
   //save data
   jatos.submitResultData(saveDataArray);
-  // saveText(JSON.stringify(saveDataArray), 'repeatedGames.'+ subjectID + '.JSON');
-  // saveData(JSON.stringify(saveDataArray))
-  // clickStart('page9a', 'page9b');
-  // jatos.endStudyAndRedirect("https://app.prolific.co/submissions/complete?cc=C1093JNR", saveDataArray);
 }
+
 ////////////////////////////////////////////////////////////////////////
 //The END
 ////////////////////////////////////////////////////////////////////////
