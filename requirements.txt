@@ -1,0 +1,8 @@
+anthropic==0.34.2
+gym==0.26.2
+numpy==2.1.1
+openai==1.47.0
+pandas==2.2.3
+scipy==1.14.1
+torch==2.4.1
+transformers==4.44.2
